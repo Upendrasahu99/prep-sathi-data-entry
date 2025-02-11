@@ -1,15 +1,19 @@
 import {databases, ID} from './appwriteConfig'
 
 const topics = [
-  {
-    topic: 'olericulture(vegitable  science )',
-    subjects: ['67a1037c000414fc5b03']
-  },
-  {
-    topic: 'floriculture(flower science)',
-    subjects: ['67a1037c000414fc5b03']
-  },
+  "general horticulture",
+  "olericulture (vegetable science)",
+  "floriculture (flower science)",
+  "pomology (fruit science)",
+  "aromatic plants study",
+  "ornamental plants study",
+  "post harvest technology",
+  "spice crops study",
+  "plantation crops study",
+  "protected cultivation",
+  "vegetable processing"
 ]
+const subjectId =  '67aa3d63001bc932c355';
 
 const addTopic = async () => { 
   try {
@@ -19,7 +23,10 @@ const addTopic = async () => {
         import.meta.env.VITE_DATABASE_ID,
         import.meta.env.VITE_COLLECTION_ID_TOPIC,
         ID.unique(),
-        topic
+        {
+          topic: topic,
+          subjects: subjectId
+        }
       );
       console.log(promisData);
     });
